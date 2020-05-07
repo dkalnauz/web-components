@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir":"./disk",
+    "jsx": "react",
+    "sourceMap": true,
+    "target": "es2015",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "experimentalDecorators": true,
+    "types": [ "node" ],
+    "typeRoots": [ "../node_modules/@types" ]
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts"
+  ]
+}
