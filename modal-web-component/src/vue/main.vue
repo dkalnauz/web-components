@@ -5,15 +5,11 @@ export default {
     expanded: Boolean
   },
   methods: {
-    handleCloseModalCallback() {
-      isModalVisible = false;
-    },
     showModal() {
       this.expanded = true;
     },
     hideModal() {
       this.expanded = false;
-      this.$emit('closeCallback');
     }
   }
 };
