@@ -2,15 +2,18 @@
 import { log } from "util";
 export default {
   props: {
-    isModalVisible: (Boolean = false)
+    expanded: Boolean
   },
   methods: {
     handleCloseModalCallback() {
-      log("test");
       isModalVisible = false;
     },
     showModal() {
-      isModalVisible = true;
+      this.expanded = true;
+    },
+    hideModal() {
+      this.expanded = false;
+      this.$emit('closeCallback');
     }
   }
 };
@@ -23,22 +26,17 @@ div {
   align-items: center;
   display: flex;
 }
-
-my-button {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 </style>
 
 <template>
   <div class="app-wrapper">
     <h1>Vue</h1>
-    <my-modal :expanded="isModalVisible" :closeCallback="isModalVisible=false">
+    <my-modal :expanded="expanded ? '': null" @click="hideModal">
       <modal-header slot="header">Modal header</modal-header>
       <modal-content
         slot="content"
       >Nullam neque sapien, tempor ut euismod vel, dapibus id arcu. Praesent ut tristique nunc, nec faucibus libero. Phasellus nec lectus sit amet diam.</modal-content>
     </my-modal>
-    <my-button type="primary" @click="isModalVisible=true">Show plain text</my-button>
+    <my-button type="primary" @click="showModal">Show plain text</my-button>
   </div>
 </template>
