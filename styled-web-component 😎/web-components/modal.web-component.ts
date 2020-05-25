@@ -20,13 +20,13 @@ const componentStyle = `
 .modal {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
   border: 1px solid #888;
   width: 80%;
 }
 
 .modal-header {
   color: var(--modal-header-text-color, #004A72);
+  background-color: var(--modal-header-bg-color, #fefefe);
   font-family: var(--main-font-family, 'Open Sans');
   font-size: 16px;
   font-weight: 600;
@@ -35,13 +35,17 @@ const componentStyle = `
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
-  padding-right: 10px;
-  margin-bottom: 19px;
+  padding: 20px;
+}
 
+.modal-content{
+  padding: 20px;
+  color: var(--modal-content-text-color, #000);
+  background-color: var(--modal-content-bg-color, #fefefe);
 }
 
 .icon-close {
-  color: #aaaaaa;
+  color: var(--icon-close-color, #aaaaaa);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -49,8 +53,7 @@ const componentStyle = `
 
 .icon-close:hover,
 icon-close:focus {
-  color: #000;
-  text-decoration: none;
+  color: var(--icon-close-color-hover, #000);
   cursor: pointer;
 }
 `;
@@ -72,7 +75,7 @@ modalTemplate.innerHTML = `
   `;
 
 export class MyModal extends HTMLElement {
-  _closeCallback() {};
+  _closeCallback() { };
 
   set closeCallback(val) {
     this._closeCallback = val;
