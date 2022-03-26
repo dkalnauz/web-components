@@ -38,7 +38,7 @@
     "core-js": "^2.5.7",
     "es6-promise": "^4.1.1",
     "mime": "^1.6.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "reflect-metadata": "^0.1.10",
@@ -54,7 +54,7 @@
     "zone.js": "^0.8.16"
   },
   "resolutions": {
-    "minimist": "1.2.5",
+    "minimist": "1.2.6",
     "ecstatic": "4.1.4"
   }
 }
